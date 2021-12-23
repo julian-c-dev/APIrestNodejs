@@ -41,6 +41,7 @@ app.post("/api/articles", (req, res) => {
     if (err) {
       throw err;
     } else {
+      Object.assign(data, { id: results.insertId });
       res.send(results);
     }
   });
